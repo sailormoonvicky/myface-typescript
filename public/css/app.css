@@ -1,1 +1,245 @@
 /* Add your styles here. */
+
+/* ------------------
+Setting
+------------------ */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.stack-lg > * + * {
+    margin-top: 4rem;
+}
+
+.stack-md > * + * {
+    margin-top: 2rem;
+}
+
+body {
+    background-color: #252A38;
+    color:#DCDCDC;
+}
+
+/* ------------------
+Header
+------------------ */
+.navbar {
+    position: fixed;
+    padding: 20px 0;
+    z-index: 5;
+    width: 100%;
+    transition: all 0.3s ease;
+}
+
+.navbar.sticky {
+    padding: 10px 0;
+    background-color: #151820;
+}
+
+.header-container {
+    max-width: 1250px;
+    margin: auto;
+    padding: 0px 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo a {
+    color:#DCDCDC ;
+    font-size: 30px;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.navlist {
+    display: inline-flex;
+}
+
+.navlist li {
+    list-style: none;
+    margin-left:25px;
+}
+
+.navlist li a {
+    color: #DCDCDC;
+    font-size: 18px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.navlist li a:hover {
+    color: #2985ff;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.icon {
+    color:hsl(240, 22%, 92%);
+    font-size: 20px;
+    cursor: pointer;
+    display:none;
+}
+
+.icon .menu-btn {
+    right: 1rem;
+}
+
+.icon .cancel-btn {
+    position: absolute;
+    left:30px;
+    top: 20px;
+}
+
+
+/* ------------------
+Banner
+------------------ */
+.banner {
+    padding-top: 100px;
+    max-width: 95px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+/* ------------------
+Posts
+------------------ */
+.post-container {
+    margin: 0 1vw 0.6vw 1vw;
+    max-width: 35vw;
+    background-color: #151820;
+}
+
+.post-container img{
+    max-width: 33vw;
+}
+
+.cards-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    max-width: 90vw;
+
+}
+
+/* ------------------
+Media Queries
+------------------ */
+@media screen and (max-width:430px ) {
+    body.disabledScroll {
+        overflow: hidden;
+    }
+
+    .header-container {
+        justify-content: space-evenly;
+    }
+
+    .icon {
+        display: block;
+    }
+
+    .icon.hide {
+        display: none;
+    }
+
+    .navlist {
+        position: fixed;
+        top: 0;
+        left: -100%;
+        height: 100vh;
+        width: 100%;
+        max-width: 400px;
+        background: gray;
+        display: block;
+        padding: 40px 0;
+        text-align: center;
+        transition: all 0.3s ease;
+    }
+
+    .navlist.active {
+        left:0%;
+    }
+
+    .navlist li {
+        margin-top: 30px;
+    }
+
+    .navlist li a {
+        font-size: 23px;
+    }
+
+    .banner {
+        max-width: 95px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .post-container {
+        margin: 0 1vw 0.6vw 1vw;
+        max-width: 430px;
+        background-color: #151820;
+    }
+
+    .post-container img{
+        max-width: 95vw;
+    }
+
+    .text-container {
+        max-width: 75vw ;
+        margin-right: auto;
+        margin-left: auto;
+        margin-bottom: 3vw;
+    }
+
+    .username {
+        font-weight: 600;
+    }
+
+    .timestamp {
+        font-size: 0.7rem;
+    }
+    .message {
+        padding-top: 20px;
+    }
+
+    .rate {
+        max-width: 75vw ;
+        margin-right: auto;
+        margin-left: auto;
+        margin-bottom: 5vw;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .like {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .dislike {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .icon-container{
+        background-color: #151820;
+        border: #151820 solid;
+    }
+
+    .pages {
+        max-width: 75vw ;
+        margin-right: auto;
+        margin-left: auto;
+    }
+
+    .pages a {
+        color: #DCDCDC;
+    }
+
+}
