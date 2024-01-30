@@ -78,10 +78,10 @@ Header
 }
 
 .icon {
+    display: none;
     color:hsl(240, 22%, 92%);
     font-size: 20px;
     cursor: pointer;
-    display:none;
 }
 
 .icon .menu-btn {
@@ -92,6 +92,7 @@ Header
     position: absolute;
     left:30px;
     top: 20px;
+
 }
 
 
@@ -109,8 +110,21 @@ Banner
 /* ------------------
 Posts
 ------------------ */
+ol {
+    list-style-type: none;
+}
+.cards-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    max-width: 90vw;
+    margin-left: auto;
+    margin-right: auto;
+    justify-content: space-around;
+}
+
 .post-container {
-    margin: 0 1vw 0.6vw 1vw;
+    margin: 0 1vw 2vw 1vw;
     max-width: 35vw;
     background-color: #151820;
 }
@@ -119,18 +133,79 @@ Posts
     max-width: 33vw;
 }
 
-.cards-container {
+
+.text-container {
+    max-width: 28vw ;
+    margin: 3vw auto;
+}
+
+.username {
+    font-weight: 600;
+}
+
+.timestamp {
+    font-size: 0.8rem;
+}
+.message {
+    padding-top: 20px;
+}
+
+.rate {
+    max-width: 28vw ;
+    margin-right: auto;
+    margin-left: auto;
+    margin-bottom: 3vw;
     display: flex;
     flex-direction: row;
-    flex-wrap: wrap;
-    max-width: 90vw;
-
+    justify-content: space-evenly;
 }
+
+.like-dislike {
+    display: flex;
+    flex-direction: row;
+}
+
+
+.like-dislike button {
+    margin-right: 10px;
+}
+
+.icon-container i {
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.icon-container:hover {
+    padding: 8px 12px;
+}
+
+.icon-container{
+    background-color: #151820;
+    border: none;
+    padding: 5px 10px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.pages {
+    max-width: 75vw ;
+    margin:auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.pages a {
+    color: #DCDCDC;
+}
+
 
 /* ------------------
 Media Queries
 ------------------ */
-@media screen and (max-width:430px ) {
+@media only screen and (max-width:430px ) {
     body.disabledScroll {
         overflow: hidden;
     }
@@ -230,16 +305,6 @@ Media Queries
     .icon-container{
         background-color: #151820;
         border: #151820 solid;
-    }
-
-    .pages {
-        max-width: 75vw ;
-        margin-right: auto;
-        margin-left: auto;
-    }
-
-    .pages a {
-        color: #DCDCDC;
     }
 
 }
