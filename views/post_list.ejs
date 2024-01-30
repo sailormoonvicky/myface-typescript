@@ -17,10 +17,10 @@
                             <p class="message"><%= post.message %></p> 
                         </div>
                         <div class="rate">
-                            <div class="like">
+                            <div class="like-dislike">
                                 <form method="post" action="/posts/<%= post.id %>/like/">
                                     <button type="submit">
-                                        <div class="icon-container icon">
+                                        <div class="icon-container">
                                             <i class="fa-solid fa-thumbs-up"></i>
                                         </div>
                                     </button>
@@ -28,10 +28,10 @@
                                 <p><%= post.likedBy.length %></p>
                             </div>
 
-                            <div class="dislike">
+                            <div class="like-dislike">
                                 <form method="post" action="/posts/<%= post.id %>/dislike/">
                                     <button type="submit">
-                                        <div class="icon-container icon">
+                                        <div class="icon-container">
                                             <i class="fa-solid fa-thumbs-down"></i>
                                         </div>
                                     </button>
