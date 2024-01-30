@@ -1,36 +1,61 @@
 <html lang="en-gb">
 <%- include('_head') -%>
 <%- include('_header') -%>
-<body>
-    <h1>Posts</h1>
+<body class="stack-lg" >
+    <div class="banner"><h1>Posts</h1></div>
+    <div class="posts">
         <ol>
-            <% postList.results.forEach(function(post) {%>
-                <li>
-                    <p><%= post.id %></p>
-                    <p><%= post.message %></p> 
-                    <p><%= format(post.createdAt, "yyyy-MM-dd HH:mm:ss") %></p>
-                    <img src=
-                    <%= post.imageUrl %>
-                    alt="An image of a post">
-                    <p>by <%= post.postedBy.name %> </p>
-                    <p>Liked by <%= post.likedBy.length %> </p>
-                    <p>Disliked by <%= post.dislikedBy.length %></p>
-                    <form method="post" action="/posts/<%= post.id %>/like/">
-                        <button type="submit">Liking</button>
-                    </form>
-                    <form method="post" action="/posts/<%= post.id %>/dislike/">
-                        <button type="submit">Disliking</button>
-                    </form>
-                </li>
-            <% }); %>
+            <div class='cards-container'>
+                <% postList.results.forEach(function(post) {%>
+                    <li class="post-container">
+                        <img src=
+                        <%= post.imageUrl %>
+                        alt="An image of a post">
+                        <div class="text-container">
+                            <p class="username">by <%= post.postedBy.username %> </p>
+                            <p class="timestamp"><%= format(post.createdAt, "yyyy-MM-dd HH:mm:ss") %></p>
+                            <p class="message"><%= post.message %></p> 
+                        </div>
+                        <div class="rate">
+                            <div class="like">
+                                <form method="post" action="/posts/<%= post.id %>/like/">
+                                    <button type="submit">
+                                        <div class="icon-container icon">
+                                            <i class="fa-solid fa-thumbs-up"></i>
+                                        </div>
+                                    </button>
+                                </form>
+                                <p><%= post.likedBy.length %></p>
+                            </div>
+
+                            <div class="dislike">
+                                <form method="post" action="/posts/<%= post.id %>/dislike/">
+                                    <button type="submit">
+                                        <div class="icon-container icon">
+                                            <i class="fa-solid fa-thumbs-down"></i>
+                                        </div>
+                                    </button>
+                                </form>
+                                <p><%= post.dislikedBy.length %></p>
+                            </div>
+
+                        </div>
+
+                    </li>
+                <% }); %>
+            </div>
+
         </ol>
+    </div>
+
+    <div class="pages">
         <%if (postList.next) { %>
             <a href="<%= postList.next %>">Next</a>
         <% } %>
         <%if (postList.previous) { %>
             <a href="<%= postList.previous %>">Previous</a>
         <% } %>
-
+    </div>
 
 </body>
 <%- include('_footer') -%>
