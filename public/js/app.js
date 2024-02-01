@@ -43,7 +43,7 @@ window.addEventListener('scroll', () => {
 
 document.addEventListener('DOMContentLoaded', function() {
   const submitBtn = document.getElementById('submit-btn');
-  const form = document.getElementsByClassName('userForm');
+  // const form = document.getElementsByClassName('userForm');
   const username = document.getElementById('username');
   const email = document.getElementById('email');
   const usernameCheckValidity =() => {
@@ -52,13 +52,13 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 
   const emailCheckValidity =() => {
-    const regex = /[.'_%\-+A-Za-z0-9]+@\w+([-.]?\w+)*(\.\w{2,3})+/g;
+    const regex = /[.'_%\-+A-Za-z0-9]+@\w+([-.]?\w+)*(\.\w{2,3})+/;
     return regex.test(email.value);
   }
 
   const validateForm = () => {
     // Check if all form fields are valid
-    const isValid = usernameCheckValidity() && emailCheckValidity;
+    const isValid = usernameCheckValidity() && emailCheckValidity();
     submitBtn.disabled = !isValid; // Enable button if form is valid, else disable
   };
 
