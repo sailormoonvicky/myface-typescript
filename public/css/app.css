@@ -8,6 +8,43 @@ Setting
     padding: 0;
     box-sizing: border-box;
     font-family: 'Open Sans', sans-serif;
+
+    --regular-text: 400;
+    --bold:600;
+    --lighter:300;
+
+    --mobile-title: 24px;
+    --mobile-subtitle:20px;
+    --mobile-button: 20px;
+    --mobile-body: 14px;
+    --mobile-secondary: 10px;
+
+    --tablet-title: 24px;
+    --tablet-subtitle:20px;
+    --tablet-button: 20px;
+    --tablet-body: 14px;
+    --tablet-secondary: 10px;
+
+    --desktop-title: 32px;
+    --desktop-subtitle:24px;
+    --desktop-button: 24px;
+    --desktop-body: 16px;
+    --desktop-secondary: 12px;
+
+    --mobile-gutters: 24px;
+    --mobile-card-separation:24px;
+    --mobile-section-spacing: 40px;
+    --mobile-card-padding: 16px;
+
+    --tablet-gutters: 32px;
+    --tablet-card-separation:32px;
+    --tablet-section-spacing: 48px;
+    --tablet-card-padding: 16px;
+
+    --desktop-gutters: 48px;
+    --desktop-card-separation:48px;
+    --desktop-section-spacing: 80px;
+    --desktop-card-padding: 24px;
 }
 
 .stack-lg > * + * {
@@ -141,13 +178,15 @@ ol {
 
 .username {
     font-weight: 600;
+    font-size: var(--desktop-body);
 }
 
 .timestamp {
-    font-size: 0.8rem;
+    font-size: var(--desktop-body);
 }
 .message {
     padding-top: 20px;
+    font-size: var(--desktop-body);
 }
 
 .rate {
@@ -200,6 +239,10 @@ ol {
 .pages a {
     color: #DCDCDC;
 }
+
+/* ------------------
+User Details
+------------------ */
 
 
 /* ------------------
@@ -276,14 +319,17 @@ Media Queries
     }
 
     .username {
+        font-size: var(--mobile-body);
         font-weight: 600;
     }
 
     .timestamp {
-        font-size: 0.7rem;
+        font-size: var(--mobile-body);
+        font-weight: var(--lighter);
     }
     .message {
         padding-top: 20px;
+        font-size: var(--mobile-body);
     }
 
     .rate {
@@ -311,6 +357,84 @@ Media Queries
         border: #151820 solid;
     }
 
+}
+
+/* user details */
+@media only screen and (max-width:430px) {
+    .profile-section-container {
+        max-width: 430px;
+    
+    }
+    
+    .profile-section-container .coverImg {
+        max-width: 430px;
+        position:relative;
+        z-index: -1;
+        opacity: 0.56;
+    }
+
+    .profile-card {
+        display: flex;
+        flex-direction: row;
+        margin-top: -50px;
+        align-items: center;
+        margin-left: 24px;
+        background-color: #15182056;
+        position: relative;
+        z-index: 2;
+    }
+
+    .profile-card img {
+        border-radius: 50%;
+        border: #DCDCDC solid 5px;
+        width: 120px;
+    }
+
+    .profile-text-container {
+        margin-left: 16px;
+    }
+
+    .profile-text-container .name{
+        font-size: var(--mobile-title);
+        font-weight: var(--regular-text);
+    }
+
+    .username-container {
+        margin-top: 10px;
+        font-size: var(--mobile-body);
+    }
+
+    .username-container .username {
+        font-weight: var(--bold);
+    }
+
+    .username-container .email {
+        font-weight: var(--lighter);
+    }
+
+    .userposts {
+        margin-top: var(--mobile-section-spacing);
+        margin-left: var(--mobile-gutters);
+    }
+
+    .userposts-container {
+        display: flex;
+        flex-direction: row;
+    }
+    .userposts .post-container{
+        margin-top: var(--mobile-card-separation);
+        margin-right: var(--mobile-card-separation);
+        max-width: 300px;
+    }
+
+    .userposts .post-container img{
+        width: 300px;
+        height: 200px;
+    }
+
+    .userposts .post-container .text-container{
+        padding: var(--mobile-card-padding);
+    }
 }
 
 /*create_user*/

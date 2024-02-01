@@ -2,19 +2,76 @@
 <%- include('_head') -%>
 <%- include('_header') -%>
 <body>
-<h1><%= name %></h1>
-<img src= <%= coverImageUrl %> alt="An image a user cover">
-<p><%= username %> <%= email %></p>
-<img src= <%= profileImageUrl %> alt="An image a user profile">
-<ol>
-    <% posts.forEach((post) => {%>
-        <li>
-            <p>Post: <%= post.message %></p>
-            <img src="<%= post.imageUrl %>" alt="An image of post">
-            <p>Created time: <%= post.createdAt %></p>
-        </li>
-<% }) %>
-</ol>
+    <section>
+        <div class="profile-section-container">
+            <img class="coverImg" src= <%= coverImageUrl %> alt="An image a user cover">
+            <div class="profile-card">
+                <img src= <%= profileImageUrl %> alt="An image a user profile">
+                <div class="profile-text-container">
+                    <p class="name"><%= name %></p>
+                    <div class="username-container">
+                        <p class="username"><%= username %></p>
+                        <p class="email"> <%= email %></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="userposts">
+            <p class="name"><%= name.split(' ')[0] %>'s Posts</p>
+            <div class="userposts-container">
+                <% posts.forEach((post) => {%>
+                    <div class="post-container">
+                        <img src="<%= post.imageUrl %>" alt="An image of post">
+                        <div class="text-container">
+                            <p class="username"><%= username %></p>
+                            <p class="timestamp"><%= post.createdAt %></p>
+                            <p class="message"><%= post.message %></p> 
+                        </div>
+                    </div>
+                    <% }) %>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="userposts">
+            <p class="name">Posts <%= name.split(' ')[0] %> Liked</p>
+            <div class="userposts-container">
+                <% likes.forEach((post) => {%>
+                    <div class="post-container">
+                        <img src="<%= post.imageUrl %>" alt="An image of post">
+                        <div class="text-container">
+                            <p class="username"><%= username %></p>
+                            <p class="timestamp"><%= post.createdAt %></p>
+                            <p class="message"><%= post.message %></p> 
+                        </div>
+                    </div>
+                    <% }) %>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="userposts">
+            <p class="name">Posts <%= name.split(' ')[0] %> Disliked</p>
+            <div class="userposts-container">
+                <% dislikes.forEach((post) => {%>
+                    <div class="post-container">
+                        <img src="<%= post.imageUrl %>" alt="An image of post">
+                        <div class="text-container">
+                            <p class="username"><%= username %></p>
+                            <p class="timestamp"><%= post.createdAt %></p>
+                            <p class="message"><%= post.message %></p> 
+                        </div>
+                    </div>
+                    <% }) %>
+            </div>
+        </div>
+    </section>
+
 </body>
 <%- include('_footer') -%>
 </html>
