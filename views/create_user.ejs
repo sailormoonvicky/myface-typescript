@@ -2,30 +2,33 @@
 <%- include('_head') -%>
 <%- include('_header') -%>
 <body>
-<h1>Create User</h1>
-<form method="post" action="/users/create">
-    <label>
-        Name:
-        <input type="text" name="name" required />
-    </label>
-    <label>
-        Username:
-        <input type="text" name="username" required/>
-    </label>
-    <label>
-        Email:
-        <input type="email" name="email" required/>
-    </label>
-    <label>
-        ProfileImageUrl:
-        <input type="text" name="profileImageUrl" required/>
-    </label>
-    <label>
-        CoverImageUrl:
-        <input type="text" name="coverImageUrl" required/>
-    </label>
-    <button type="submit">Submit</button>
-</form>
+    <div class="banner"><h1>Create User</h1></div>
+    <div class="userForm">
+        <form class="createUser" method="post" action="/users/create">
+            <label for="name">
+                Name:
+                <input id="name" type="text" name="name" required />
+            </label>
+            <label for="username">
+                Username:
+                <input id="username" type="text" name="username" required/>
+            </label>
+            <label for="email">
+                Email:
+                <input id="email" type="email" name="email" required/>
+            </label>
+            <label for="profileImageUrl">
+                ProfileImageUrl:
+                <input id="profileImageUrl" type="text" name="profileImageUrl"/>
+            </label>
+            <label for="coverImageUrl">
+                CoverImageUrl:
+                <input id="coverImageUrl" type="text" name="coverImageUrl" />
+            </label>
+            <button id="submit-btn" type="submit" disabled>Submit</button>
+        </form>
+    </div>
+
 </body>
 <%- include('_footer') -%>
 </html>
